@@ -1,0 +1,30 @@
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineSweeper</title>
+    <!--
+        https://docs.djangoproject.com/en/4.2/howto/static-files/
+        https://www.php.cn/faq/476355.html 
+        https://blog.csdn.net/weixin_50539579/article/details/111504738
+        https://www.twblogs.net/a/5eaa9cd86052e15273fd9531
+        可以教你在django使用CSS 或其他檔案
+    -->
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id = MainTextTitle>
+        <h1>踩地雷</h1>
+    </div>
+    <div>
+        <input type="button" value="開始遊戲" name="" id="StartGame">
+    </div>
+    <div>
+        <input type="button" value="調整設定" name="" id="ChangeSetting" onclick = "location.href = 'Gaming.html'";>
+        <h2></h2>
+    </div>
+</body>
+</html>
