@@ -5,5 +5,15 @@ from django.template import loader
 # Create your views here.
 def MinesweeperMain(request):
     template = loader.get_template('Main.html')
+    
     return HttpResponse(template.render())
 
+def GameSetting(request):
+    template = loader.get_template('GameSetting.html')
+    return HttpResponse(template.render())
+def Setting(request):
+    template = loader.get_template('Setting.html')
+    return HttpResponse(template.render())
+def Gaming(request):
+    template = loader.get_template('Gaming.html')
+    return HttpResponse(template.render())
