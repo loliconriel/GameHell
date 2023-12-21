@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+{% extends "master.html" %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Setting</h1>
+    {% block content %}
+        <h2>Setting</h2>
+    {% endblock %}
 </body>
 </html>

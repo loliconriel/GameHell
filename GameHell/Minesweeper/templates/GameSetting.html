@@ -1,3 +1,4 @@
+{% extends "master.html" %}
 
 {% load static %}
 <html lang="en">
@@ -7,20 +8,39 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>GameSetting</h1>
-    <form action="">
-        <div>
-            <p style="display: inline;">遊戲大小</p>
-            <input type="number" value = "5" max = "100"  min = "5" name="" id="MatrixSize">
-        </div>
-        <div>
-            <p style="display: inline;">地雷數量</p>
-            <input type="number" value = "1" min = "1" id="MineAmount">
-        </div>
-        
-        <br>
-        <input type="button" value = "開始遊戲" id="" onclick="location.href = 'Gaming'">
-    </form>
-    
+    {% block content%}
+        <h2>GameSetting</h2>
+        <form action="." method="post" id = "GameSetting">
+            <!--{% csrf_token %}--->
+            <label></label>
+                
+            <div>
+                <div>
+                    <h1>預設模式</h1>
+                    <select name="" id="">
+                        <option value="easy">簡單 10顆地雷</option>
+                        <option value="normal">普通 40顆地雷</option>
+                        <option value="hard">困難 99顆地雷</option>
+                    </select>
+                    <br>
+                    <input type="button" value = "開始遊戲" id="" onclick="location.href = 'Gaming'">
+                </div>
+                <div>
+                    <h1>自訂義模式</h1>
+                    <p style="display: inline;">遊戲大小</p>
+                    <input type="number" value = "5" max = "100"  min = "5" name="" id="MatrixSize">
+                
+                    <br>
+                
+                    <p style="display: inline;">地雷數量</p>
+                    <input type="number" value = "1" min = "1" id="MineAmount">
+                
+                    <br>
+                    <input type="button" value = "開始遊戲" id="" onclick="location.href = 'Gaming'">
+                </div>
+            </div>
+            
+        </form>
+    {% endblock %}
 </body>
 </html>

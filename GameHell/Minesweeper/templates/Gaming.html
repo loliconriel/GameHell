@@ -1,14 +1,29 @@
+{% extends "master.html" %}
 
 {% load static %}
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        window.onload =function(){
+            GenerateMap();
+        }
+        var martrixsize = 18;
+        var MineAmount = 40;
+        var GameTime = 0.0;
 
 
+        function GenerateMap(){
+            print("ASD");
+            var MineMap = document.getElementById("MineMap");
+            console.log("ASD");
+        }
+            
 
+        
 
 
     </script>
@@ -16,6 +31,14 @@
 
 </head>
 <body>
-    <h1>HI</h1>
+    {% block content %}
+        <div>
+            <p>地雷數量</p>
+            <p>遊戲時間</p>
+        </div>
+        <div id = "MineMap">
+
+        </div>
+    {% endblock %}
 </body>
 </html>

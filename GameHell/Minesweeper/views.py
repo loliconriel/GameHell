@@ -10,6 +10,10 @@ def MinesweeperMain(request):
 
 def GameSetting(request):
     template = loader.get_template('GameSetting.html')
+    #if request.method == 'GET':
+        #print('HI')
+        
+        #PrepareForm = MineForm()
     return HttpResponse(template.render())
 def Setting(request):
     template = loader.get_template('Setting.html')
