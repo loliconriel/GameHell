@@ -7,7 +7,9 @@ def MinesweeperMain(request):
     template = loader.get_template('Main.html')
     
     return HttpResponse(template.render())
-
+def login(request):
+    template = loader.get_template("Login.html")
+    return HttpResponse(template.render())
 def GameSetting(request):
     template = loader.get_template('GameSetting.html')
     #if request.method == 'GET':

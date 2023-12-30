@@ -1,0 +1,33 @@
+.pinline{
+    display: inline;
+}
+.GameTitle{
+    background-color: aliceblue;
+    display: inline;
+}
+.Centermap{
+
+    margin: 0% 20% 0% 20%;
+
+}
+.block{
+    width: 60px;
+    height: 60px;
+    background-color: rgb(221, 221, 221);
+    font-size: 0px;
+
+}
+.mark{
+    background-color: red;
+}
+.open{
+    background-color: rgb(255, 255, 255);
+
+}
+.open.Numberblock{
+    font-size: large;
+}
+.JumpScreen{
+    background-color: brown;
+    
+}
