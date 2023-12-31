@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-
+from .forms import MineForm
 # Create your views here.
 def MinesweeperMain(request):
     template = loader.get_template('Main.html')
@@ -19,7 +19,14 @@ def GameSetting(request):
     return HttpResponse(template.render())
 def Setting(request):
     template = loader.get_template('Setting.html')
-    return HttpResponse(template.render())
+    return render(request, 'Setting.html')
 def Gaming(request):
     template = loader.get_template('Gaming.html')
-    return HttpResponse(template.render())
+    print(request.method)
+    if request.method =="POST":
+        #GameSetting = request.POST.get('GameSetting')
+        GameSetting = MineForm(request.POST)
+        print("ASD")
+        print(GameSetting)
+        return render(request, "Gaming.html", {'GameSetting': GameSetting})
+    else: return render(request, "Gaming.html", {'GameSetting': None})

@@ -21,7 +21,14 @@
             <p class="pinline" id = "TimeClock">0</p>
         </div>
         <div id = "JumpScreen">
+            {%if GameSetting %}
+                
+                <p>Data: {{GameSetting}}</p>
+            {%else%}
+                <p>ASD</p>
+            {%endif%}
             <div id = "MiniMap" class="Centermap">
+            
             </div>
             <button onclick = "init()">HELLO</button>
         </div>
