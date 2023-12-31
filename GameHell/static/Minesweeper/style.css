@@ -1,33 +1,60 @@
-.pinline{
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: monospace, DFKai-sb;
+}
+
+.pinline {
     display: inline;
 }
-.GameTitle{
-    background-color: aliceblue;
-    display: inline;
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
 }
-.Centermap{
+
+.GameTitle {
+    /* background-color: red; */
+    /* display: inline; */
+    /* margin: 0 20%; */
+}
+
+.home {}
+
+.login {}
+
+.Centermap {
 
     margin: 0% 20% 0% 20%;
 
 }
-.block{
+
+
+.block {
     width: 60px;
     height: 60px;
     background-color: rgb(221, 221, 221);
     font-size: 0px;
 
 }
-.mark{
+
+.mark {
     background-color: red;
 }
-.open{
+
+.open {
     background-color: rgb(255, 255, 255);
 
 }
-.open.Numberblock{
+
+.open.Numberblock {
     font-size: large;
 }
-.JumpScreen{
+
+.JumpScreen {
     background-color: brown;
-    
+
 }
