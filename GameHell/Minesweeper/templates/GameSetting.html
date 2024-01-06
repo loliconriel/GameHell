@@ -18,17 +18,14 @@
                     <h1>預設模式</h1>
                     <form action="Gaming" method="post">
                         {% csrf_token %}
-                        <select for = "GameSetting"name="Difficultyvalue" id="">
-                            {%for key,value in select_form}
-                            <option value="easy">簡單 10顆地雷</option>
-                            <option value="normal">普通 40顆地雷</option>
-                            <option value="hard">困難 99顆地雷</option>
+                        <select name="Difficultyvalue" id="">
+                            {%for key,value in select_form.DifficultyList %}
+                                <option value="{{value}}">{{key}}</option>
+                            {%endfor%}    
                         </select>
                         
                         <input type="submit" value = "開始遊戲" id="">
                     </form>
-                    
-                    
                 </div>
                 <div>
                     <h1>自訂義模式</h1>

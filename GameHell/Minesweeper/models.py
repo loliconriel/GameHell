@@ -7,11 +7,11 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 class Difficulty(models.Model):
-    DifficultyList = (
+    DifficultyList = [
         ("easy","簡單"),
         ("normal","普通"),
         ("hard","困難"),
-    )
+    ]
     MineDict = {
         "easy" : 10,
         "normal" : 40,

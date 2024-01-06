@@ -28,7 +28,9 @@
 
 .Centermap {
 
-    margin: 0% 20% 0% 20%;
+display: flex;
+    justify-content: space-around;
+    align-items: center;
 
 }
 
@@ -57,4 +59,31 @@
 .JumpScreen {
     background-color: brown;
 
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }

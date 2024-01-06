@@ -7,7 +7,11 @@ window.onload = function(){
         // 模拟点击事件
     //    simulateClick();  
     //});
-    
+    document.getElementById("closePopupBtn").addEventListener('click', function () {
+        customPopup.style.display = 'none';
+        init();
+        
+    });
     init();
 
 }
@@ -23,7 +27,20 @@ let NumberBlock = "PressButton(event)\" id = \"myButton\" class = \"Numberblock 
 let MapArray;
 
 function init(){
-    GenerateMap();
+    
+    var Difficulty = document.getElementById("DifficultyShow").innerHTML;
+    if(Difficulty == '簡單'){
+        GenerateMap(10,10);
+    }
+    else if(Difficulty == '普通'){
+        GenerateMap(18,40);
+    }
+    else if(Difficulty == '困難'){
+        GenerateMap(24,99);
+    }
+    else{
+        GenerateMap(18,40);
+    }
     
     BlockListener();
 
@@ -53,6 +70,8 @@ function WinCheck(){
     }
     if(Markblock+Notopenblock==MineCount){
         console.log("You Win");
+        document.getElementById("content").innerHTML = "你贏了 關掉視窗開始新的一局";
+        customPopup.style.display = 'block';
         clearInterval(TimeID);
     }
     
@@ -64,7 +83,7 @@ function ChangeMineAmount(MineAmount,event){
         WinCheck();
     }
 }
-function GenerateMap(MartrixSize = 10,MineAmount = 10){
+function GenerateMap(MartrixSize = 20,MineAmount = 10){
     //alert("成功呼叫")
     
     MapArray = MapGenerate(MartrixSize,MineAmount);
@@ -187,6 +206,7 @@ function BlockListener(){
             var buttonId = event.target.id;
             // 在这里执行按钮特定的操作，例如触发点击事件
             simulateClick(buttonId);
+            
 
           });
     })
@@ -311,7 +331,9 @@ function NumberButton(button){
     }
     
 }
-function MineButton(){
+function MineButton(event){
+    document.getElementById("content").innerHTML = "你輸了 關掉視窗開始新的一局";
+    customPopup.style.display = 'block';
     console.log("BOOM");
 
 }
