@@ -6,30 +6,37 @@
 <head>
     {% block head%}
     <title>GameHell</title>
-
     {% endblock%}
-
-
-
 </head>
 
 <body>
     {% block content %}
-    <div class="container">
-        <div>
-            <h2>踩地雷</h2>
-        </div>
-        <!--location.href 會在當前網址的後方加上 /你要到的url 所以必須跟你url的網址一模一樣-->
-        <div>
-            <input type="button" value="開始遊戲" id="StartGame" onclick="location.href = 'GameSetting'">
-        </div>
+    <div class="containerbox">
+        {{block.super}}
+        <div class="gamebody">
+            <!-- 左邊區塊：圖片 -->
+            <div class="col-md-6 img-container">
+                <img src="/static/picture/Background.png" alt="gamepicture">
+            </div>
 
-        <div>
-            <input type="button" value="調整設定" id="ChangeSetting" onclick="location.href = 'Setting'">
+            <!-- 右邊區塊：踩地雷、遊戲簡介、開始遊戲、調整設定 -->
+            <div class="col-md-5 information-container">
+                <h2>踩地雷</h2>
+
+                <!-- 遊戲簡介 -->
+                <p>這裡是遊戲的簡介，你可以放入遊戲相關的文字內容。1234567890</p>
+
+                <!-- 開始遊戲、調整設定 -->
+                <div class="d-flex flex-row">
+                    <input type="button" value="開始遊戲" id="StartGame" onclick="location.href = 'GameSetting'"
+                        class="mb-2">
+
+                    <input type="button" value="調整設定" id="ChangeSetting" onclick="location.href = 'Setting'">
+                </div>
+            </div>
         </div>
     </div>
     {% endblock %}
-
 </body>
 
 </html>

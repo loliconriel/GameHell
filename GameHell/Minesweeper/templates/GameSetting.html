@@ -2,47 +2,51 @@
 
 {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     {% block content%}
+    <div class="containerbox">
+        {{block.super}}
         <h2>GameSetting</h2>
-            <!--{% csrf_token %}--->
-            <label></label>
-                
+        <!--{% csrf_token %}--->
+        <label></label>
+        <div>
             <div>
-                <div>
-                    <h1>預設模式</h1>
-                    <form action="Gaming" method="post">
-                        {% csrf_token %}
-                        <select name="Difficultyvalue" id="">
-                            {%for key,value in select_form.DifficultyList %}
-                                <option value="{{value}}">{{key}}</option>
-                            {%endfor%}    
-                        </select>
-                        
-                        <input type="submit" value = "開始遊戲" id="">
-                    </form>
-                </div>
-                <div>
-                    <h1>自訂義模式(尚未開放)</h1>
-                    <p style="display: inline;">遊戲大小</p>
-                    <input type="number" value = "5" max = "100"  min = "5" name="" id="MatrixSize">
-                
-                    <br>
-                
-                    <p style="display: inline;">地雷數量</p>
-                    <input type="number" value = "1" min = "1" id="MineAmount">
-                
-                    <br>
-                    <input type="button" value = "開始遊戲" id="" onclick="location.href = 'Gaming'">
-                </div>
+                <h1>預設模式</h1>
+                <form action="Gaming" method="post">
+                    {% csrf_token %}
+                    <select name="Difficultyvalue" id="">
+                        {%for key,value in select_form.DifficultyList %}
+                        <option value="{{value}}">{{key}}</option>
+                        {%endfor%}
+                    </select>
+
+                    <input type="submit" value="開始遊戲" id="">
+                </form>
             </div>
-            
+            <div>
+                <h1>自訂義模式(尚未開放)</h1>
+                <p style="display: inline;">遊戲大小</p>
+                <input type="number" value="5" max="100" min="5" name="" id="MatrixSize">
+
+                <br>
+
+                <p style="display: inline;">地雷數量</p>
+                <input type="number" value="1" min="1" id="MineAmount">
+
+                <br>
+                <input type="button" value="開始遊戲" id="" onclick="location.href = 'Gaming'">
+            </div>
+        </div>
         </form>
+    </div>
     {% endblock %}
 </body>
+
 </html>

@@ -2,41 +2,98 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: monospace, DFKai-sb;
+    font-family: 'PixelFont_EN', 'PixelFont_CH';
 }
 
-.container {
-    background: url('/static/picture/game_hell_wallpaper.jpg') center center fixed;
+@font-face {
+    font-family: 'PixelFont_EN';
+    src: url(/static/fonts/Silkscreen/slkscr.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PixelFont_CH';
+    src: url(/static/fonts/fusion-pixel-font-10px-monospaced-ttf-v2023.11.26/fusion-pixel-10px-monospaced-zh_hant.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.containerbox {
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .3)), url('/static/picture/game_hell_wallpaper.jpg') no-repeat center;
     background-size: cover;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+nav {
+    position: fixed;
+    width: 90%;
+    top: 0;
+    z-index: 1000;
+    right: 0;
+    height: 10vh;
+}
+
+.container_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    background: transparent;
+    backdrop-filter: blur(15px);
+    border-radius: 1em;
+    box-shadow: 0 0 5px #fff;
+}
+
+.logo {
+    width: 100%;
+    cursor: pointer;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+}
+
+
+.nav-link {
+    text-decoration: none;
+}
+
+.gamebody {
     height: 90vh;
-    /* background-color: rgba(0, 0, 0, 0.9); */
-    opacity: .9;
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid rgba(255, 255, 255, .7); */
+    box-shadow: 0 0 5px #fff;
+    border-radius: 1em;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    color: #fff;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.information-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* width: 50%; */
 }
 
 .pinline {
     display: inline;
-}
-
-.navbar {
-    background-color: #6e0000;
-    /* 深紅色 Navbar，符合「地獄」元素 */
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.GameTitle {
-    font-family: 'Impact', sans-serif;
-    /* 使用 Impact 字體，符合「遊戲」元素 */
-}
-
-.navbar-nav .nav-link {
-    color: #fff;
-    /* 導覽列連結文字顏色為白色 */
 }
 
 .Centermap {

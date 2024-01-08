@@ -1,17 +1,21 @@
 {% extends "master.html" %}
 {% load static %}
 <html lang="en">
+
 <head>
     {% block head%}
     <title>MineSweeper</title>
-    
+
     {% endblock%}
-    
-    
-    
+
+
+
 </head>
+
 <body>
     {% block content %}
+    <div class="containerbox">
+        {{block.super}}
         <form action="">
             <p>Username</p>
             <input type="text" name="" id="">
@@ -20,7 +24,9 @@
             <br>
             <input type="submit">
         </form>
-    {% endblock %} 
-   
+    </div>
+    {% endblock %}
+
 </body>
+
 </html>
