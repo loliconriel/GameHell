@@ -23,7 +23,6 @@ def Gaming(request):
     if request.method =="POST":
         #GameSetting = request.POST.get('GameSetting')
         select_form = MineForm(request.POST)
-        print("ASD")
         print(GameSetting)
         return render(request, "Gaming.html", {'select_form': select_form})
     else: return render(request, "Gaming.html", {'select_form': None})

@@ -2,6 +2,7 @@ from django import forms
 from .models import Difficulty
 
 class MineForm(forms.Form):
+   
     DifficultyList = [
         ("easy","簡單"),
         ("normal","普通"),
