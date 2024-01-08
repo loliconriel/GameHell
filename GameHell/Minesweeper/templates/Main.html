@@ -15,16 +15,18 @@
 
 <body>
     {% block content %}
-    <div>
-        <h2>踩地雷</h2>
-    </div>
-    <!--location.href 會在當前網址的後方加上 /你要到的url 所以必須跟你url的網址一模一樣-->
-    <div>
-        <input type="button" value="開始遊戲" name="" id="StartGame" onclick="location.href = 'GameSetting'">
-    </div>
-    <div>
-        <input type="button" value="調整設定" name="" id="ChangeSetting" onclick="location.href = 'Setting'" ;>
-        <h2></h2>
+    <div class="container">
+        <div>
+            <h2>踩地雷</h2>
+        </div>
+        <!--location.href 會在當前網址的後方加上 /你要到的url 所以必須跟你url的網址一模一樣-->
+        <div>
+            <input type="button" value="開始遊戲" id="StartGame" onclick="location.href = 'GameSetting'">
+        </div>
+
+        <div>
+            <input type="button" value="調整設定" id="ChangeSetting" onclick="location.href = 'Setting'">
+        </div>
     </div>
     {% endblock %}
 
