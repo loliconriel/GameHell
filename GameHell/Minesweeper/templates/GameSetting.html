@@ -13,11 +13,10 @@
     {% block content%}
     <div class="containerbox">
         {{block.super}}
-        <h2>GameSetting</h2>
         <!--{% csrf_token %}--->
-        <label></label>
-        <div>
-            <div>
+        <div class="gameSetting">
+            <h2>GameSetting</h2>
+            <div class="defaultMode">
                 <h1>預設模式</h1>
                 <form action="Gaming" method="post">
                     {% csrf_token %}
@@ -26,7 +25,6 @@
                         <option value="{{value}}">{{key}}</option>
                         {%endfor%}
                     </select>
-
                     <input type="submit" value="開始遊戲" id="">
                 </form>
             </div>

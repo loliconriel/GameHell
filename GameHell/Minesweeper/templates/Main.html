@@ -21,41 +21,42 @@
             <!-- 右邊區塊：踩地雷、遊戲簡介、開始遊戲、調整設定 -->
             <div class="col-md-4 px-5 information-container">
                 <!-- 遊戲名稱 -->
-                <h1 class="mt-3 me-5 gameName ">踩地雷</h2>
-                    <!-- 遊戲簡介 -->
-                    <p class="text-end  introduce">
-                        歡迎來到遊戲地獄，
-                        <br>
-                        遊戲地獄取名的靈感由來，
-                        <br>
-                        為大家小時候聽過的
-                        <br>
-                        線上娛樂平台「遊戲天堂」。
-                        <br>
-                        我們希望運用Web程式設計所學，
-                        <br>
-                        透過Python、JavaScript、
-                        <br>
-                        Bootstrap、HTML...，
-                        <br>
-                        以及最重要的Django網頁應用框架，
-                        <br>
-                        來達到UI/UX設計的目的，
-                        <br>
-                        以及致敬我們小時候的童年。
-                    </p>
-                    <!-- 開始遊戲、調整設定 -->
-                    <div class="runcontainer text-end">
-                        <input type="button" value="開始遊戲" id="StartGame" onclick="location.href = 'GameSetting'"
-                            class="startGameButton">
+                <h1 class="mt-3 me-5 display-4 gameName text-md-2 text-lg-3 text-xl-3 text-xxl-4">踩地雷
+                </h1>
+                <!-- 遊戲簡介 -->
+                <div class="text-end fs-4 introduce text-md-2 text-lg-3 text-xl-3 text-xxl-4">
+                    歡迎來到遊戲地獄，
+                    <br>
+                    遊戲地獄取名的靈感由來，
+                    <br>
+                    為大家小時候聽過的
+                    <br>
+                    線上娛樂平台「遊戲天堂」。
+                    <br>
+                    我們希望運用Web程式設計所學，
+                    <br>
+                    透過Python、JavaScript、
+                    <br>
+                    Bootstrap、HTML...，
+                    <br>
+                    以及最重要的Django網頁應用框架，
+                    <br>
+                    來達到UI/UX設計的目的，
+                    <br>
+                    以及致敬我們小時候的童年。
+                </div>
+                <!-- 開始遊戲、調整設定 -->
+                <div class="runcontainer text-end">
+                    <input type="button" value="開始遊戲" id="StartGame" onclick="location.href = 'GameSetting'"
+                        class="startGameButton">
 
-                        <input type="button" value="調整設定" id="ChangeSetting" onclick="location.href = 'Setting'"
-                            class="changeSettingButton">
-                    </div>
+                    <input type="button" value="調整設定" id="ChangeSetting" onclick="location.href = 'Setting'"
+                        class="changeSettingButton">
+                </div>
             </div>
         </div>
     </div>
-    
+
     {% endblock %}
 </body>
 
