@@ -19,29 +19,28 @@
         {{block.super}}
         <div id="gameScreen" class="gameScreen">
             <div class="gamebox">
+
                 <div id="customPopup" class="popup">
                     <div class="popup-content">
                         <p id="content">你輸了 關掉視窗便重新新的一局</p>
                         <button class="close" id="closePopupBtn">&times;</button>
                     </div>
                 </div>
-                <div class="gameInformation">
+
+                <div class="game_row1">
                     <p class="pinline">地雷數量 : </p>
                     <p class="pinline" id="MineAmount">10</p>
                     <p class="pinline">遊戲時間 : </p>
                     <p class="pinline" id="TimeClock">0</p>
-                </div>
-                <div id="JumpScreen" class="JumpScreen">
                     {%if select_form %}
-                    <p style="display: inline">難易度</p>
-                    <p id="DifficultyShow">{{select_form.Difficultyvalue.value}}</p>
+                    <p style="display: inline" class="pinline">難易度 : </p>
+                    <p class="pinline" id="DifficultyShow">{{select_form.Difficultyvalue.value}}</p>
                     {%else%}
-                    <p style="display: inline">難易度</p>
-                    <p id="DifficultyShow">普通</p>
+                    <p class="pinline" style="display: inline">難易度 : </p>
+                    <p class="pinline" id="DifficultyShow">普通</p>
                     {%endif%}
                     <!-- <button onclick = "init()">HELLO</button> -->
                 </div>
-
                 <div id="MiniMap" class="Centermap">
                 </div>
             </div>
