@@ -16,13 +16,15 @@
     {% block content %}
     <div class="containerbox">
         {{block.super}}
-        <form method="POST" action="../Minesweeper/">
-            {% csrf_token %}
-            {{ form.as_p }}
-                
-            <button name="submit">register</button>
-
-          </form>
+        <div class="registerBox">
+            <div class="transbox">
+                <form method="POST" action="../Minesweeper/">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button name="submit">register</button>
+                </form>
+            </div>
+        </div>
     </div>
     {% endblock %}
 
