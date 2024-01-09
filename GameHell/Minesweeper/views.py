@@ -28,13 +28,13 @@ def Setting(request):
     return HttpResponse(template.render())
 def Gaming(request):
     template = loader.get_template('Gaming.html')
-    print(request.method)
+
     if request.method =="POST":
         #GameSetting = request.POST.get('GameSetting')
         select_form = MineForm(request.POST)
-        print(GameSetting)
+        print(select_form)
         return render(request, "Gaming.html", {'select_form': select_form})
-    else: return render(request, "Gaming.html", {'select_form': None})
+    else: return render(request, "Gaming.html")
 def login(request):
     ''' 登入 '''
     login_page = loader.get_template('login.html')
