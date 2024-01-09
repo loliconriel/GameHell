@@ -214,16 +214,16 @@ header {
 }
 
 .buttonContainer {
-    width: 80%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: end;
 }
 
-/* 
+
 .registerButton {
-    height: 30%;
-} */
+    width: 20%;
+}
 
 .transbox {
     width: 40%;

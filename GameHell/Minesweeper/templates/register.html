@@ -21,10 +21,10 @@
                 <form method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
+                    <div class="buttonContainer">
+                        <input type="submit" href="Main.html" value="下一步" class="startGameButton registerButton">
+                    </div>
                 </form>
-                <div class="buttonContainer">
-                    <input type="submit" href="Main.html" value="下一步" class="startGameButton registerButton">
-                </div>
             </div>
         </div>
     </div>
