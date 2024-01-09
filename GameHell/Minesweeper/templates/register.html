@@ -21,8 +21,10 @@
                 <form method="POST" >
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <input type="submit" href = "Main.html" value="下一步" class="startGameButton loginButton">
-
+                    
+                    <div class="rowlogin">
+                        <input type="submit" href = "Main.html" value="下一步" class="startGameButton loginButton">
+                    </div>
                 </form>
             </div>
         </div>
