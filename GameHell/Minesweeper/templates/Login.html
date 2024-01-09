@@ -16,14 +16,26 @@
     {% block content %}
     <div class="containerbox">
         {{block.super}}
-        <form action="">
+        <!-- <form action="">
             <p>Username</p>
             <input type="text" name="" id="">
             <p>Password</p>
             <input type="text">
             <br>
             <input type="submit">
-        </form>
+        </form> -->
+        {% if request.user.is_authenticated %}
+        <a href="/Logout">Logout</a>
+        {% else %}
+            <form action="../Minesweeper/" method="post">
+                {% csrf_token %}
+                <label for="username">Username: </label>
+                {{ login_form.username }}
+                <label for="password">Password: </label>
+                {{ login_form.password }}
+                <input type="submit" value="繳交">
+            </form>
+        {% endif %}
     </div>
     {% endblock %}
 

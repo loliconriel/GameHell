@@ -41,7 +41,12 @@
           <a class="nav-link" href="/Minesweeper">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/Login">Login</a>
+          {% if user.is_authenticated %}
+            <a href="/Logout">Logout </a> (Your have login as {{ user }}) 
+          {% else %}
+            <a href="/Login">Login</a>
+            <a href="/register">Register</a>
+          {% endif %}
         </li>
       </ul>
 

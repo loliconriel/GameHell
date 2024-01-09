@@ -1,12 +1,12 @@
 window.onload = function(){
-    //document.getElementById("MiniMap").oncontextmenu = function() { return false; }
-    //document.getElementById("myButton").addEventListener("contextmenu", function (event) {
-        // 阻止默认的右键菜单弹出
-        //event.preventDefault();
-    
-        // 模拟点击事件
-    //    simulateClick();  
-    //});
+
+    document.addEventListener('keydown', function(event) {
+        //是否按下了r
+        if (event.key === 'r') {
+            customPopup.style.display = 'none';
+            init();
+        }
+    });
     document.getElementById("closePopupBtn").addEventListener('click', function () {
         customPopup.style.display = 'none';
         init();
