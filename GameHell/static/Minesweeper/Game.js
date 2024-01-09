@@ -90,7 +90,7 @@ function GenerateMap(MartrixSize = 20,MineAmount = 10){
     ChangeMineAmount(MineAmount,0);
     let MapHTML = "<div>";
     for(let x = 0;x<MartrixSize;x++){
-       //MapHTML+="<ul class = 'list'>";
+       MapHTML+="<div class = 'list'>";
         for(let y = 0;y<MartrixSize;y++){
             if(MapArray[x][y]==0){
                 MapHTML+= BlockStartTag+EmptyBlock+BlockEndTag;
@@ -102,8 +102,7 @@ function GenerateMap(MartrixSize = 20,MineAmount = 10){
                 MapHTML+= BlockStartTag+NumberBlock+BlockEndTag;
             }
         }
-        //MapHTML+="</ul>";
-        MapHTML+="<br>";
+        MapHTML+="</div>";
     }
     //console.log(MapHTML);
     document.getElementById("MiniMap").innerHTML = MapHTML;

@@ -17,33 +17,33 @@
 <body>
     <div class="containerbox">
         {{block.super}}
-        <div id="GameScreen">
-            <div id="customPopup" class="popup">
-                <div class="popup-content">
-
-                    <p id="content">你輸了 關掉視窗便重新新的一局</p>
-                    <button class="close" id="closePopupBtn">&times;</button>
+        <div id="gameScreen" class="gameScreen">
+            <div class="gamebox">
+                <div id="customPopup" class="popup">
+                    <div class="popup-content">
+                        <p id="content">你輸了 關掉視窗便重新新的一局</p>
+                        <button class="close" id="closePopupBtn">&times;</button>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <p class="pinline">地雷數量 : </p>
-                <p class="pinline" id="MineAmount">10</p>
-                <p class="pinline">遊戲時間 : </p>
-                <p class="pinline" id="TimeClock">0</p>
-            </div>
-            <div id="JumpScreen" class="JumpScreen">
-                {%if select_form %}
-                <p style="display: inline">難易度</p>
-                <p id="DifficultyShow">{{select_form.Difficultyvalue.value}}</p>
-                {%else%}
-                <p style="display: inline">難易度</p>
-                <p id="DifficultyShow">普通</p>
-                {%endif%}
-            </div>
-            <div id="MiniMap" class="Centermap">
+                <div class="gameInformation">
+                    <p class="pinline">地雷數量 : </p>
+                    <p class="pinline" id="MineAmount">10</p>
+                    <p class="pinline">遊戲時間 : </p>
+                    <p class="pinline" id="TimeClock">0</p>
+                </div>
+                <div id="JumpScreen" class="JumpScreen">
+                    {%if select_form %}
+                    <p style="display: inline">難易度</p>
+                    <p id="DifficultyShow">{{select_form.Difficultyvalue.value}}</p>
+                    {%else%}
+                    <p style="display: inline">難易度</p>
+                    <p id="DifficultyShow">普通</p>
+                    {%endif%}
+                    <!-- <button onclick = "init()">HELLO</button> -->
+                </div>
 
-            </div>
-                <!-- <button onclick = "init()">HELLO</button> -->
+                <div id="MiniMap" class="Centermap">
+                </div>
             </div>
         </div>
     </div>
