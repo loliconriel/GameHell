@@ -17,7 +17,7 @@ from.models import LeaderBoard
 # Create your views here.
 def MinesweeperMain(request):
     template = loader.get_template('Main.html')
-
+    
     return HttpResponse(template.render())
 def login(request):
     template = loader.get_template("login.html")
