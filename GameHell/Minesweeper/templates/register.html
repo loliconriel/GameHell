@@ -17,13 +17,14 @@
     <div class="containerbox">
         {{block.super}}
         <div class="registerBox">
-            <div class="transbox">
-                <form method="POST" >
+            <div class="transbox transbox2">
+                <form method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <input type="submit" href = "Main.html" value="下一步" class="startGameButton loginButton">
-
                 </form>
+                <div class="buttonContainer">
+                    <input type="submit" href="Main.html" value="下一步" class="startGameButton registerButton">
+                </div>
             </div>
         </div>
     </div>

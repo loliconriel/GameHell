@@ -66,9 +66,28 @@ nav {
     list-style: none;
 }
 
+.navBar {
+    color: #fff;
+    display: flex;
+    align-items: end;
+    height: 100%;
+}
 
 .nav-link {
     text-decoration: none;
+}
+
+.logoutBox {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+    width: 50%;
+}
+
+.banner {
+    margin: 0px;
+    color: #fff;
 }
 
 .gamebody {
@@ -167,7 +186,8 @@ header {
 .settingBody,
 .loginBox,
 .registerBox,
-.gameSetting {
+.gameSetting,
+.leaderBoardContainer {
     height: 90vh;
     width: 100%;
     display: flex;
@@ -193,6 +213,18 @@ header {
     height: 70%;
 }
 
+.buttonContainer {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+/* 
+.registerButton {
+    height: 30%;
+} */
+
 .transbox {
     width: 40%;
     display: flex;
@@ -211,6 +243,13 @@ header {
 
 .transbox1 {
     height: 50%;
+}
+
+.transbox2 {
+    width: 60%;
+    height: 70%;
+    gap: 0;
+    padding: 30px;
 }
 
 .defaultMode {

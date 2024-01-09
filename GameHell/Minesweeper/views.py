@@ -17,7 +17,9 @@ from.models import LeaderBoard
 # Create your views here.
 def MinesweeperMain(request):
     template = loader.get_template('Main.html')
-
+    if request.user.is_authenticated:
+        context = {'user': request.user}
+        return HttpResponse(template.render(context,request))
     return HttpResponse(template.render())
 def login(request):
     template = loader.get_template("login.html")
