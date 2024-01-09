@@ -208,7 +208,12 @@ header {
     align-items: end;
     height: 100%;
 }
-
+.rowlogin {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+}
 .loginButton {
     height: 70%;
 }
