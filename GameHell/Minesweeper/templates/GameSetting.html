@@ -21,7 +21,7 @@
                     <h1 class="display-6">預設模式</h1>
                     <form action="Gaming" method="post" class="defaultMode_row2">
                         {% csrf_token %}
-                        <select>
+                        <select name="Difficultyvalue">
                             {%for key,value in select_form.DifficultyList %}
                             <option value="{{value}}">{{key}}</option>
                             {%endfor%}

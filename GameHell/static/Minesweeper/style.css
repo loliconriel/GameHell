@@ -214,22 +214,55 @@ header {
     gap: 50px;
 }
 
+.gameScreen {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gamebox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    border: 1px solid #fff;
+    height: 80%;
+    color: #fff;
+    background: linear-gradient(to bottom, rgba(128, 0, 0, .5), rgba(77, 0, 0, .5), rgba(0, 0, 0, .5));
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #fff;
+}
+
+.gameInformation {
+    color: #fff;
+}
+
 .pinline {
     display: inline;
 }
 
+.JumpScreen {
+    color: #fff;
+}
+
+
 .Centermap {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-
+    width: 100%;
 }
 
 
 .block {
 
-    width: 60px;
-    height: 60px;
+    width: 15px;
+    height: 15px;
     background-color: rgb(221, 221, 221);
     font-size: 0px;
 
@@ -252,10 +285,6 @@ header {
     font-size: large;
 
 }
-
-/* .JumpScreen {
-
-} */
 
 .popup {
     display: none;
