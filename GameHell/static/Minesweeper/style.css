@@ -146,7 +146,21 @@ nav {
     background-color: #cd6300;
     box-shadow: 0px 0px 10px 5px #ff5900;
 }
-
+header {
+    /* position: fixed; */
+    width: 100%;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 28px 30px;
+    transition: all.5s ease;
+    gap: 20px;
+    font-size: 1.6rem;
+    height: 12vh;
+}
 .pinline {
     display: inline;
 }
@@ -155,17 +169,21 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
 }
 
 
 .block {
+
     width: 60px;
     height: 60px;
     background-color: rgb(221, 221, 221);
     font-size: 0px;
 
 }
-
+.block:hover{
+    background-color: gray;
+}
 .mark {
     background-color: red;
 }
@@ -181,7 +199,6 @@ nav {
 }
 
 .JumpScreen {
-    background-color: brown;
 
 }
 
@@ -200,7 +217,7 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
+    padding: 30px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);

@@ -88,8 +88,9 @@ function GenerateMap(MartrixSize = 20,MineAmount = 10){
     
     MapArray = MapGenerate(MartrixSize,MineAmount);
     ChangeMineAmount(MineAmount,0);
-    let MapHTML = "<div>"
+    let MapHTML = "<div>";
     for(let x = 0;x<MartrixSize;x++){
+       //MapHTML+="<ul class = 'list'>";
         for(let y = 0;y<MartrixSize;y++){
             if(MapArray[x][y]==0){
                 MapHTML+= BlockStartTag+EmptyBlock+BlockEndTag;
@@ -101,6 +102,7 @@ function GenerateMap(MartrixSize = 20,MineAmount = 10){
                 MapHTML+= BlockStartTag+NumberBlock+BlockEndTag;
             }
         }
+        //MapHTML+="</ul>";
         MapHTML+="<br>";
     }
     //console.log(MapHTML);
@@ -108,6 +110,7 @@ function GenerateMap(MartrixSize = 20,MineAmount = 10){
     Size = MartrixSize;
     MineCount = MineAmount;
     BlockInsert(MapArray);
+    //Setlist();
 }
 
 function MapGenerate(MartrixSize,MineAmount){
@@ -153,6 +156,12 @@ function MapGenerate(MartrixSize,MineAmount){
     }
     //console.log(newMap);
     return newMap;
+}
+function Setlist(){
+    let lists = document.querySelectorAll('.list');
+    lists.forEach(function(list){
+        
+    })
 }
 function BlockInsert(MapArray){
     var buttons = document.querySelectorAll(".block");
@@ -278,7 +287,7 @@ function BlockCompare(button1,button2){
     return button1.className.split(' ')[0]== button2.className.split(' ')[0];
 }
 function EmptyButton(button){
-    console.log("Click Empty");
+    //console.log("Click Empty");
     
     let className = button.className.split;
     if(className.length>2){
@@ -291,38 +300,61 @@ function EmptyButton(button){
         button.className+=" open";
         let EmptyID = button.id.split("_");
         let EmptyFront = EmptyID[0]+"_";
-        if(parseInt((parseInt(EmptyID[1])-1)/Size)==parseInt(EmptyID[1]/Size)&&document.getElementById(EmptyFront+(parseInt(EmptyID[1])-1).toString())!=null){
-            // if(BlockCompare(button,document.getElementById(EmptyFront+(parseInt((parseInt(EmptyID[1])-1))).toString()))){
-            //     Detect(document.getElementById(EmptyFront+(parseInt((parseInt(EmptyID[1])-1))).toString()));
+        let FrontID = parseInt(EmptyID[1]);
+        if(parseInt((FrontID-1)/Size)==parseInt(FrontID/Size)&&document.getElementById(EmptyFront+(FrontID-1).toString())!=null){
+            // if(BlockCompare(button,document.getElementById(EmptyFront+(parseInt((FrontID-1))).toString()))){
+            //     Detect(document.getElementById(EmptyFront+(parseInt((FrontID-1))).toString()));
             // }
-            Detect(document.getElementById(EmptyFront+(parseInt((parseInt(EmptyID[1])-1))).toString()));
+            Detect(document.getElementById(EmptyFront+(parseInt((FrontID-1))).toString()));
             
         }
-        if(parseInt((parseInt(EmptyID[1])+1)/Size)==parseInt(EmptyID[1]/Size)&&document.getElementById(EmptyFront+(parseInt(EmptyID[1])+1).toString())!=null){
-            // if(BlockCompare(button,document.getElementById(EmptyFront+(parseInt((parseInt(EmptyID[1])+1))).toString()))){
-            //     Detect(document.getElementById(EmptyFront+(parseInt((parseInt(EmptyID[1])+1))).toString()));
+        if(parseInt((FrontID+1)/Size)==parseInt(FrontID/Size)&&document.getElementById(EmptyFront+(FrontID+1).toString())!=null){
+            // if(BlockCompare(button,document.getElementById(EmptyFront+(parseInt((FrontID+1))).toString()))){
+            //     Detect(document.getElementById(EmptyFront+(parseInt((FrontID+1))).toString()));
             // }
-            Detect(document.getElementById(EmptyFront+(parseInt((parseInt(EmptyID[1])+1))).toString()));
+            Detect(document.getElementById(EmptyFront+(parseInt((FrontID+1))).toString()));
         }
         
-        if(parseInt((parseInt(EmptyID[1])+Size)/Size)-1==parseInt(EmptyID[1]/Size)&&document.getElementById(EmptyFront+(parseInt(EmptyID[1])+Size).toString())!=null){
-            // if(BlockCompare(button,document.getElementById(EmptyFront+(parseInt((parseInt(EmptyID[1])+Size))).toString()))){
-            //     Detect(document.getElementById(EmptyFront+(parseInt((parseInt(EmptyID[1])+Size))).toString()));
+        if(parseInt((FrontID+Size)/Size)-1==parseInt(FrontID/Size)&&document.getElementById(EmptyFront+(FrontID+Size).toString())!=null){
+            // if(BlockCompare(button,document.getElementById(EmptyFront+(parseInt((FrontID+Size))).toString()))){
+            //     Detect(document.getElementById(EmptyFront+(parseInt((FrontID+Size))).toString()));
             // }
-            Detect(document.getElementById(EmptyFront+(parseInt((parseInt(EmptyID[1])+Size))).toString()));
+            Detect(document.getElementById(EmptyFront+(parseInt((FrontID+Size))).toString()));
         }
-        if(parseInt((parseInt(EmptyID[1])-Size)/Size)+1==parseInt(EmptyID[1]/Size)&&document.getElementById(EmptyFront+(parseInt(EmptyID[1])-Size).toString())!=null){
-            // if(BlockCompare(button,document.getElementById(EmptyFront+(parseInt((parseInt(EmptyID[1])-Size))).toString()))){
-            //     Detect(document.getElementById(EmptyFront+(parseInt((parseInt(EmptyID[1])-Size))).toString()));
+        if(parseInt((FrontID-Size)/Size)+1==parseInt(FrontID/Size)&&document.getElementById(EmptyFront+(FrontID-Size).toString())!=null){
+            // if(BlockCompare(button,document.getElementById(EmptyFront+(parseInt((FrontID-Size))).toString()))){
+            //     Detect(document.getElementById(EmptyFront+(parseInt((FrontID-Size))).toString()));
             // }
-            Detect(document.getElementById(EmptyFront+(parseInt((parseInt(EmptyID[1])-Size))).toString()));
+            Detect(document.getElementById(EmptyFront+(parseInt((FrontID-Size))).toString()));
         }
+        if(document.getElementById(EmptyFront+(parseInt((FrontID+1+Size))))!=null&&parseInt((FrontID+1+Size)/Size)==parseInt(FrontID/Size)+1){
+            if(document.getElementById(EmptyFront+(parseInt((FrontID+1+Size)))).className.split(' ')[0]=='Numberblock'&&document.getElementById(EmptyFront+(parseInt((FrontID+1+Size)))).className.split(' ').length<3){
+                document.getElementById(EmptyFront+(parseInt((FrontID+1+Size)))).className+=' open';
+            }
+        }
+        
+        if(document.getElementById(EmptyFront+(parseInt((FrontID-1+Size))))!=null&&parseInt((FrontID-1+Size)/Size)==parseInt(FrontID/Size)+1){
+            if(document.getElementById(EmptyFront+(parseInt((FrontID-1+Size)))).className.split(' ')[0]=='Numberblock'&&document.getElementById(EmptyFront+(parseInt((FrontID-1+Size)))).className.split(' ').length<3){
+                document.getElementById(EmptyFront+(parseInt((FrontID-1+Size)))).className+=' open';
+            }
+        }
+        if(document.getElementById(EmptyFront+(parseInt((FrontID+1-Size))))!=null&&parseInt((FrontID+1-Size)/Size)==parseInt(FrontID/Size)-1){
+            if(document.getElementById(EmptyFront+(parseInt((FrontID+1-Size)))).className.split(' ')[0]=='Numberblock'&&document.getElementById(EmptyFront+(parseInt((FrontID+1-Size)))).className.split(' ').length<3){
+                document.getElementById(EmptyFront+(parseInt((FrontID+1-Size)))).className+=' open';
+            }
+        }
+        if(document.getElementById(EmptyFront+(parseInt((FrontID-1-Size))))!=null&&parseInt((FrontID-1-Size)/Size)==parseInt(FrontID/Size)-1){
+            if(document.getElementById(EmptyFront+(parseInt((FrontID-1-Size)))).className.split(' ')[0]=='Numberblock'&&document.getElementById(EmptyFront+(parseInt((FrontID-1-Size)))).className.split(' ').length<3){
+                document.getElementById(EmptyFront+(parseInt((FrontID-1-Size)))).className+=' open';
+            }
+        }
+        
 
     }
 
 }
 function NumberButton(button){
-    console.log("Click Number");
+    //console.log("Click Number");
     if(button.className.split(' ').length>2){
 
     }
@@ -334,6 +366,7 @@ function NumberButton(button){
 function MineButton(event){
     document.getElementById("content").innerHTML = "你輸了 關掉視窗開始新的一局";
     customPopup.style.display = 'block';
-    console.log("BOOM");
+    clearInterval(TimeID);
+    //console.log("BOOM");
 
 }
