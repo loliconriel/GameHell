@@ -328,24 +328,36 @@ function EmptyButton(button){
             Detect(document.getElementById(EmptyFront+(parseInt((FrontID-Size))).toString()));
         }
         if(document.getElementById(EmptyFront+(parseInt((FrontID+1+Size))))!=null&&parseInt((FrontID+1+Size)/Size)==parseInt(FrontID/Size)+1){
-            if(document.getElementById(EmptyFront+(parseInt((FrontID+1+Size)))).className.split(' ')[0]=='Numberblock'&&document.getElementById(EmptyFront+(parseInt((FrontID+1+Size)))).className.split(' ').length<3){
-                document.getElementById(EmptyFront+(parseInt((FrontID+1+Size)))).className+=' open';
+            if(document.getElementById(EmptyFront+(parseInt((FrontID+1+Size)))).className.split(' ')[0]!='Mineblock'&&document.getElementById(EmptyFront+(parseInt((FrontID+1+Size)))).className.split(' ').length<3){
+                if(document.getElementById(EmptyFront+(parseInt((FrontID+1+Size)))).className.split(' ')[0]=='Emptyblock'){
+                    Detect(document.getElementById(EmptyFront+(parseInt((FrontID+1+Size))).toString()));
+                }
+                else document.getElementById(EmptyFront+(parseInt((FrontID+1+Size)))).className+=' open';
             }
         }
         
         if(document.getElementById(EmptyFront+(parseInt((FrontID-1+Size))))!=null&&parseInt((FrontID-1+Size)/Size)==parseInt(FrontID/Size)+1){
-            if(document.getElementById(EmptyFront+(parseInt((FrontID-1+Size)))).className.split(' ')[0]=='Numberblock'&&document.getElementById(EmptyFront+(parseInt((FrontID-1+Size)))).className.split(' ').length<3){
-                document.getElementById(EmptyFront+(parseInt((FrontID-1+Size)))).className+=' open';
+            if(document.getElementById(EmptyFront+(parseInt((FrontID-1+Size)))).className.split(' ')[0]!='Mineblock'&&document.getElementById(EmptyFront+(parseInt((FrontID-1+Size)))).className.split(' ').length<3){
+                if(document.getElementById(EmptyFront+(parseInt((FrontID-1+Size)))).className.split(' ')[0]=='Emptyblock'){
+                    Detect(document.getElementById(EmptyFront+(parseInt((FrontID-1+Size))).toString()));
+                }
+                else document.getElementById(EmptyFront+(parseInt((FrontID-1+Size)))).className+=' open';
             }
         }
         if(document.getElementById(EmptyFront+(parseInt((FrontID+1-Size))))!=null&&parseInt((FrontID+1-Size)/Size)==parseInt(FrontID/Size)-1){
-            if(document.getElementById(EmptyFront+(parseInt((FrontID+1-Size)))).className.split(' ')[0]=='Numberblock'&&document.getElementById(EmptyFront+(parseInt((FrontID+1-Size)))).className.split(' ').length<3){
-                document.getElementById(EmptyFront+(parseInt((FrontID+1-Size)))).className+=' open';
+            if(document.getElementById(EmptyFront+(parseInt((FrontID+1-Size)))).className.split(' ')[0]!='Mineblock'&&document.getElementById(EmptyFront+(parseInt((FrontID+1-Size)))).className.split(' ').length<3){
+                if(document.getElementById(EmptyFront+(parseInt((FrontID+1-Size)))).className.split(' ')[0]=='Emptyblock'){
+                    Detect(document.getElementById(EmptyFront+(parseInt((FrontID+1-Size))).toString()));
+                }
+                else document.getElementById(EmptyFront+(parseInt((FrontID+1-Size)))).className+=' open';
             }
         }
         if(document.getElementById(EmptyFront+(parseInt((FrontID-1-Size))))!=null&&parseInt((FrontID-1-Size)/Size)==parseInt(FrontID/Size)-1){
-            if(document.getElementById(EmptyFront+(parseInt((FrontID-1-Size)))).className.split(' ')[0]=='Numberblock'&&document.getElementById(EmptyFront+(parseInt((FrontID-1-Size)))).className.split(' ').length<3){
-                document.getElementById(EmptyFront+(parseInt((FrontID-1-Size)))).className+=' open';
+            if(document.getElementById(EmptyFront+(parseInt((FrontID-1-Size)))).className.split(' ')[0]!='Mineblock'&&document.getElementById(EmptyFront+(parseInt((FrontID-1-Size)))).className.split(' ').length<3){
+                if(document.getElementById(EmptyFront+(parseInt((FrontID-1-Size)))).className.split(' ')[0]=='Emptyblock'){
+                    Detect(document.getElementById(EmptyFront+(parseInt((FrontID-1-Size))).toString()));
+                }
+                else document.getElementById(EmptyFront+(parseInt((FrontID-1-Size)))).className+=' open';
             }
         }
         
