@@ -103,15 +103,10 @@ nav {
 }
 
 .gameName {
-    font-size: 56px;
     display: flex;
     align-items: end;
     justify-content: end;
     width: 100%;
-}
-
-.introduce {
-    font-size: x-large;
 }
 
 .runcontainer {
@@ -121,7 +116,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10%;
+    gap: 50px;
 }
 
 .startGameButton,
@@ -146,8 +141,9 @@ nav {
     background-color: #cd6300;
     box-shadow: 0px 0px 10px 5px #ff5900;
 }
+
+/* 
 header {
-    /* position: fixed; */
     width: 100%;
     top: 0;
     right: 0;
@@ -160,7 +156,19 @@ header {
     gap: 20px;
     font-size: 1.6rem;
     height: 12vh;
+} */
+
+.gameSetting {
+    height: 90vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    color: #fff;
+    width: 30%;
+    flex-direction: column;
+    gap: 30px;
 }
+
 .pinline {
     display: inline;
 }
@@ -181,9 +189,11 @@ header {
     font-size: 0px;
 
 }
-.block:hover{
+
+.block:hover {
     background-color: gray;
 }
+
 .mark {
     background-color: red;
 }
@@ -198,9 +208,9 @@ header {
 
 }
 
-.JumpScreen {
+/* .JumpScreen {
 
-}
+} */
 
 .popup {
     display: none;
