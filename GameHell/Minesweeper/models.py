@@ -12,3 +12,10 @@ class Difficulty(models.Model):
     def __str__(self):
         return f"{self.DifficultyList}"
     
+class LeaderBoard(models.Model):
+    player_name = models.CharField(max_length=50)
+    score = models.IntegerField()
+    difficulty = models.ForeignKey(Difficulty, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.player_name} - {self.score} - {self.difficulty.Difficultyvalue}"
