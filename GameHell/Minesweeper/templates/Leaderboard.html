@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+{% load static %}
+<html lang="en">
+
+<head>
+    {% block head%}
+    <title>MineSweeper</title>
+
+    {% endblock%}
+
+
+
+</head>
+
+<body>
+    {% block content %}
+    <div class="containerbox">
+        {{block.super}}
+        <div>Hi</div>
+    </div>
+    {% endblock %}
+
+</body>
+
+</html>

@@ -8,5 +8,6 @@ urlpatterns = [
     path('register/',views.register,name=  'register'),
     path('Minesweeper/GameSetting',views.GameSetting,name ='GameSetting'),
     path('Minesweeper/Setting',views.Setting,name= 'Setting'),
-    path('Minesweeper/Gaming',views.Gaming,name='Gaming')
+    path('Minesweeper/Gaming',views.Gaming,name='Gaming'),
+    path('Leaderboard/',views.LeaderBoardhtml,name='Leaderboard')
 ]

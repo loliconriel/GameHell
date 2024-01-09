@@ -76,6 +76,27 @@ function WinCheck() {
     }
 
 }
+function saveResult(){
+    
+    var formData = $('#gameResultForm').serialize();
+
+            // Make an Ajax request to save the result
+            $.ajax({
+                type: 'POST',
+                url: '{% url "save_result" %}',
+                data: formData,
+                success: function(response) {
+                    console.log(response);
+                    console.log("MAYBE");
+                    // Optionally, update the UI to reflect the success
+                },
+                error: function(error) {
+                    console.error('Failed to save result', error);
+                    // Optionally, handle the failure
+                }
+            });
+    init()
+}
 function ChangeMineAmount(MineAmount, event) {
     Amount = parseInt(MineAmount + event);
     document.getElementById("MineAmount").innerHTML = Amount;

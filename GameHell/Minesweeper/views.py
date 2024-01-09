@@ -7,8 +7,12 @@ from django.contrib import auth
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from .forms import MineForm
 from .forms import LoginForm
+from .models import Difficulty
+from.models import LeaderBoard
 
 # Create your views here.
 def MinesweeperMain(request):
@@ -35,40 +39,38 @@ def Gaming(request):
         print(select_form)
         return render(request, "Gaming.html", {'select_form': select_form})
     else: return render(request, "Gaming.html")
+def LeaderBoardhtml(request):
+    template = loader.get_template('Leaderboard.html')
+
+    return render(request,'Leaderboard.html')
+@csrf_exempt  # Disable CSRF protection for this view (for simplicity in this example, make sure to handle CSRF properly in production)
+def save_result(request):
+    print(request)
+    print("DYTUGIOJO:")
+    if request.method == 'POST':
+        player_name = request.POST.get('player_name')
+        score = request.POST.get('score')
+        difficulty = request.POST.get('difficulty')
+        try:
+            difficulty_instance = Difficulty.objects.get(Difficultyvalue=difficulty)
+            LeaderBoard.objects.create(player_name=player_name, score=score, difficulty=difficulty_instance)
+            return JsonResponse({'status': 'success'})
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)})
+
+    return JsonResponse({'status': 'error', 'message': 'Invalid request'})
 def login(request):
     ''' 登入 '''
-    login_page = loader.get_template('login.html')
-    if request.method == 'GET':
-        login_form = LoginForm()
-        context = {
-            'user': request.user,
-            'login_form': login_form,
-        }
-
-
-        return HttpResponse(login_page.render(context, request))
-    if request.method == "POST":
-        
-        login_form = LoginForm(request.POST)
-        if login_form.is_valid():
-            username = login_form.changed_data['username']
-            password = login_form.changed_data['password']
-            
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                auth.login(request, user)
-                main_page = loader.get_template('main.html')
-                context = {'user': request.user,
-                           'message': 'login ok'}
-                return HttpResponse(login_page.render(context, request))
-            else:
-                message = 'Login failed (auth fail)'
-        else:                    
-            print ('Login error (login form is not valid)')
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('/Minesweeper')
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+    user = auth.authenticate(username=username, password=password)
+    if user is not None and user.is_active:
+        auth.login(request, user)
+        return HttpResponseRedirect('/Minesweeper')
     else:
-        print ('Error on request (not GET/POST)')
-    context = {'user': request.user, 'login_form': login_form}
-    return render(request, 'login.html', context)
+        return render(request, 'login.html', locals())
 
 def logout(request):
     ''' 登出 '''
@@ -87,23 +89,23 @@ def register(request):
     else:
         
         form = UserCreationForm(data=request.POST)
-        
         if form.is_valid():
-            username = request.POST.get('username')
-            password = request.POST.get('password')
+            form.save()
+            # username = request.POST.get('username')
+            # password = request.POST.get('password')
             
-            authenticated_user = authenticate(username=username,
-                password=password)
-            user_obj = User.objects.filter(username=username)
+            # authenticated_user = authenticate(username=username,
+            #     password=password)
+            # user_obj = User.objects.filter(username=username)
             
-            user = User.objects.create(username = username)
-            user.set_password(password)
-            user.save()
+            # user = User.objects.create(username = username)
+            # user.set_password(password)
+            # user.save()
             # auth.login(request,authenticated_user)
             # main_page = loader.get_template('main.html')
             # context = {'user': request.user,
             #                'message': 'login ok'}
-            return redirect('/')
+            return redirect('/Minesweeper/')
 
     context = {'form': form}
     return render(request, 'register.html', context)
