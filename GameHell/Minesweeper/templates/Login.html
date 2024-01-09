@@ -25,9 +25,9 @@
             <input type="submit">
         </form> -->
         {% if request.user.is_authenticated %}
-        <a href="/Logout">Logout</a>
+        <a href="/Minesweeper/">Logout</a>
         {% else %}
-            <form action="../Minesweeper/" method="post">
+            <form action="/Minesweeper/" method="post">
                 {% csrf_token %}
                 <label for="username">Username: </label>
                 {{ login_form.username }}

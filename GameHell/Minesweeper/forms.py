@@ -12,8 +12,18 @@ class MineForm(forms.Form):
     Difficultyvalue = forms.CharField(max_length=10,widget=forms.widgets.Select(choices=DifficultyList))
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=20)
-    password = forms.CharField(max_length=20, widget=forms.PasswordInput)
+    username = forms.CharField(
+        max_length=20, 
+        widget=forms.TextInput(
+            attrs={'class': 'form-control'}
+        )
+    )
+    password = forms.CharField(
+        max_length=20, 
+        widget=forms.PasswordInput(
+            attrs={'class': 'form-control'}
+        )
+    )
 
 
 

@@ -21,6 +21,7 @@ def login(request):
 def GameSetting(request):
     template = loader.get_template('GameSetting.html')
     select_form = MineForm()
+
     return render(request, 'GameSetting.html',{'select_form':select_form})
 def Setting(request):
     template = loader.get_template('Setting.html')
@@ -46,11 +47,13 @@ def login(request):
 
 
         return HttpResponse(login_page.render(context, request))
-    elif request.method == "POST":
+    if request.method == "POST":
+        
         login_form = LoginForm(request.POST)
         if login_form.is_valid():
-            username = request.POST.get['username']
-            password = request.POST.get['password']
+            username = login_form.changed_data['username']
+            password = login_form.changed_data['password']
+            
             user = authenticate(username=username, password=password)
             if user is not None:
                 auth.login(request, user)
@@ -64,7 +67,8 @@ def login(request):
             print ('Login error (login form is not valid)')
     else:
         print ('Error on request (not GET/POST)')
-
+    context = {'user': request.user, 'login_form': login_form}
+    return render(request, 'login.html', context)
 
 def logout(request):
     ''' 登出 '''
