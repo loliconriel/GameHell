@@ -107,6 +107,11 @@ nav {
     align-items: end;
     justify-content: end;
     width: 100%;
+    font-size: 3.5rem;
+}
+
+.introduce {
+    font-size: 1.5rem;
 }
 
 .runcontainer {
@@ -169,13 +174,31 @@ header {
     justify-content: center;
 }
 
+.formbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+
+.columnlogin {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 100%;
+}
+
+.loginButton {
+    height: 70%;
+}
+
 .transbox {
     width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 10%;
     border: 1px solid #fff;
     height: 80%;
     color: #fff;
@@ -183,6 +206,10 @@ header {
     backdrop-filter: blur(10px);
     border-radius: 10px;
     box-shadow: 0 0 10px #fff;
+}
+
+.transbox1 {
+    height: 50%;
 }
 
 .defaultMode {
@@ -223,33 +250,26 @@ header {
 }
 
 .gamebox {
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 30px;
-    border: 1px solid #fff;
-    height: 80%;
-    color: #fff;
+    /* gap: 30px; */
+    height: 100%;
     background: linear-gradient(to bottom, rgba(128, 0, 0, .5), rgba(77, 0, 0, .5), rgba(0, 0, 0, .5));
     backdrop-filter: blur(10px);
     border-radius: 10px;
     box-shadow: 0 0 10px #fff;
 }
 
-.gameInformation {
+.game_row1 {
     color: #fff;
 }
 
 .pinline {
     display: inline;
 }
-
-.JumpScreen {
-    color: #fff;
-}
-
 
 .Centermap {
     display: flex;
@@ -258,32 +278,40 @@ header {
     width: 100%;
 }
 
+.mainMap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 .block {
-
-    width: 20px;
-    height: 20px;
-    background-color: rgb(221, 221, 221);
+    width: 23px;
+    height: 23px;
+    background-color: gray;
     font-size: 0px;
-
 }
 
 .block:hover {
-    background-color: gray;
+    background-color: rgb(255, 255, 255);
 }
 
-.mark {
-    background-color: red;
-}
 
 .open {
     background-color: rgb(255, 255, 255);
+}
 
+.markblock {
+    background-color: red;
 }
 
 .open.Numberblock {
-    font-size: large;
+    font-size: small;
+}
 
+
+.list {
+    height: 23px;
 }
 
 .popup {
@@ -312,4 +340,53 @@ header {
     top: 10px;
     right: 10px;
     cursor: pointer;
+}
+
+
+/* .gameName {
+    font-size: 3.5rem;
+}
+
+.introduce {
+    font-size: 1.5rem;
+} */
+
+@media (min-width: 768px) {
+    .introduce {
+        font-size: 0.7rem;
+    }
+
+    .gameName {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .introduce {
+        font-size: 1rem;
+    }
+
+    .gameName {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .introduce {
+        font-size: 1rem;
+    }
+
+    .gameName {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .introduce {
+        font-size: 1.5rem;
+    }
+
+    .gameName {
+        font-size: 3.5rem;
+    }
 }
